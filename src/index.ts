@@ -1,18 +1,18 @@
-import express from 'express'
-import * as dotenv from 'dotenv'
-import { connectDB } from './database/mongodb'
-import { initRoutes } from './config/routes'
+import express from 'express';
+import * as dotenv from 'dotenv';
+import { connectDB } from './database/mongodb';
+import { initRoutes } from './config/routes';
 
-import cors from 'cors'
-const app = express()
-dotenv.config()
+import cors from 'cors';
+const app = express();
+dotenv.config();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
-connectDB()
-initRoutes(app)
+connectDB();
+initRoutes(app);
 
-app.listen(process.env.BACKEND_PORT, () => console.log(`Backend sendo executado na porta ${process.env.BACKEND_PORT}`))
+app.listen(process.env.BACKEND_PORT, () => console.log(`Server running on port ${process.env.BACKEND_PORT}`));
 
-export default app
+export default app;
